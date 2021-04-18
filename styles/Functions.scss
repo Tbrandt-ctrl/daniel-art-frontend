@@ -1,0 +1,75 @@
+@import "./Variables.scss";
+
+//Functions
+@mixin FlexCenterCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin FlexCenterTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin FlexCenterBtm {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@mixin FlexTopCenter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin FlexTopTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin FlexBtmCenter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin Inheritall {
+  height: inherit;
+  width: inherit;
+}
+
+@mixin BckdImgCenter {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size !important;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        ) !important;
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size !important;
+      }
+    }
+  }
+}

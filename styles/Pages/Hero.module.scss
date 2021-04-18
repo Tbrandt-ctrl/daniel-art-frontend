@@ -1,0 +1,17 @@
+@import "../Functions.scss";
+@import "../Variables.scss";
+
+.container {
+  height: auto;
+  padding: 15vh 0;
+  width: inherit;
+  @include FlexCenterCenter;
+
+  h1 {
+    overflow: hidden;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 2.3rem;
+  }
+}

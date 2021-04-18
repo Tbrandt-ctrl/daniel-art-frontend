@@ -1,0 +1,35 @@
+@import "../Functions.scss";
+@import "../Variables.scss";
+
+.container {
+  height: auto;
+  width: inherit;
+  @include FlexCenterCenter;
+  flex-direction: column;
+  @media only screen and (min-width: 440px) {
+    padding: 0 10vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    > div {
+      width: 35vw;
+      &:nth-of-type(odd) {
+        margin-right: 5vw;
+      }
+      &:nth-of-type(even) {
+        margin-left: 5vw;
+      }
+    }
+    @media only screen and (max-width: 1100px) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      > div {
+        width: 80vw;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        > div:first-of-type {
+          height: 80vh;
+        }
+      }
+    }
+  }
+}
