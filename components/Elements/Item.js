@@ -6,7 +6,13 @@ const Item = ({ img, title, description, price, available }) => {
   return (
     <div className={ItemStyle.container}>
       <div className={ItemStyle.img}>
-        <Image src={img} layout="fill" objectFit="cover" />
+        <Image
+          preload="true"
+          loading="eager"
+          src={img}
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
       <div className={ItemStyle.info}>
         <div className={ItemStyle.title_description}>

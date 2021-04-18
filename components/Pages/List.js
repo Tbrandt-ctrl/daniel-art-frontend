@@ -9,7 +9,7 @@ const List = () => {
         "/img/17042021-Tableau-no_cartel--3_symboles_marquent_le_paysage--082020-CROPPED.jpg",
       title: "3 Symboles marquent le paysage",
       description: "70x50cm, Huile sur toile",
-      price: "70 €",
+      price: "60 €",
       available: true,
     },
     {
@@ -22,9 +22,9 @@ const List = () => {
     },
     {
       img: "/img/17042021-Tableau-no_cartel--Boites_roses--2020-CROPPED.jpg",
-      title: "Boites roses",
+      title: "Boîtes roses",
       description: "50x40cm, Huile sur Toile",
-      price: "40 €",
+      price: "30 €",
       available: true,
     },
     {
