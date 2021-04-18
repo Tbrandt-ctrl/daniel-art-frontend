@@ -30,18 +30,24 @@
   height: auto;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
-  span {
-    font-size: 0.5rem;
-  }
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5vh;
   > div {
-    width: 50%;
-  }
-  .title_description {
+    min-height: inherit;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+  }
+  span {
+    font-size: 0.5rem;
+    margin-top: 0.5vh;
+  }
+
+  .title_description {
+    max-width: 80%;
+    width: auto;
+
     text-align: start;
     h4 {
       font-weight: 600;
@@ -52,10 +58,7 @@
   }
 
   .price_available {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    height: 100%;
     text-align: end;
     h4 {
       font-weight: 400;
