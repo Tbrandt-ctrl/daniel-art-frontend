@@ -57,7 +57,7 @@ const List = () => {
       title: "Red Monolyth in Desert",
       description: "70x50cm, Acrylique sur Toile",
       price: "30 €",
-      available: true,
+      available: false,
     },
     {
       img:
