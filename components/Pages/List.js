@@ -1,8 +1,20 @@
 import ListStyle from "../../styles/Pages/List.module.scss";
 
+import { useState, useEffect } from "react";
+
 import Item from "../Elements/Item";
 
 const List = () => {
+  const [go, setGo] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setGo(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const data = [
     {
       img:
@@ -79,9 +91,11 @@ const List = () => {
 
   return (
     <div className={ListStyle.container}>
-      {data.map((item) => {
+      {data.map((item, index) => {
         return (
           <Item
+            go={go}
+            key={index}
             img={item.img}
             title={item.title}
             description={item.description}

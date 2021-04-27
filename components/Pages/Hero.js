@@ -2,11 +2,10 @@ import HeroStyle from "../../styles/Pages/Hero.module.scss";
 
 const Hero = () => {
   return (
-    <div className={HeroStyle.container}>
-      <h1>
-        DANIEL <br />
-        BRANDT
-      </h1>
+    <div className={`${HeroStyle.container}`}>
+      <div>
+        <h1>DANIEL BRANDT</h1>
+      </div>
     </div>
   );
 };

@@ -2,16 +2,39 @@
 @import "../Variables.scss";
 
 .container {
-  height: auto;
-  padding: 15vh 0;
+  top: 0;
+  height: 100vh;
+  z-index: 5;
   width: inherit;
-  @include FlexCenterCenter;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  > div {
+    height: 20vh;
+    @include FlexCenterCenter;
+    transform: translateY(45vh);
+    animation: slide-top 1s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    h1 {
+      overflow: hidden;
+      text-align: center;
+      font-weight: 700;
+      line-height: 2.3rem;
+    }
+  }
+  @media only screen and (min-width: 440px) {
+    > div {
+      height: 20vh;
+      transform: translateY(35vh);
+      @include FlexCenterCenter;
+    }
+  }
+}
 
-  h1 {
-    overflow: hidden;
-    text-align: center;
-    font-weight: 700;
-    font-size: 2.8rem;
-    line-height: 2.3rem;
+@keyframes slide-top {
+  to {
+    transform: translateY(0);
   }
 }

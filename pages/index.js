@@ -14,6 +14,7 @@ export default function Home() {
       </Head>
 
       <section className={HomeStyle.container}>
+        <div className={HomeStyle.rememberer}></div>
         <Hero />
         <List />
         <ContactBtn />

@@ -4,15 +4,9 @@ const ContactBtn = () => {
   return (
     <div className={ContactBtnStyle.container}>
       <a href="https://www.instagram.com/danielbrndt/" target="_blank">
-        <button>CONTACT</button>
+        <span>contact me</span>
       </a>
-
-      <h4>
-        Website by{" "}
-        <a href="https://kolocagency.com/" target="_blank">
-          Koloc Agency
-        </a>
-      </h4>
+      <h4>Website designed by Koloc Agency</h4>
     </div>
   );
 };

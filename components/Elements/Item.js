@@ -1,10 +1,20 @@
 import ItemStyle from "../../styles/Elements/Item.module.scss";
 
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 
-const Item = ({ img, title, description, price, available }) => {
+const Item = ({ img, title, description, price, available, go }) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    go === true ? setVisible(true) : null;
+  }, [go]);
+
   return (
-    <div className={ItemStyle.container}>
+    <div
+      className={`${ItemStyle.container} ${visible ? ItemStyle.visible : ""}`}
+    >
       <div className={ItemStyle.img}>
         <Image
           preload="true"
@@ -16,12 +26,13 @@ const Item = ({ img, title, description, price, available }) => {
       </div>
       <div className={ItemStyle.info}>
         <div className={ItemStyle.title_description}>
-          <h4>{title}</h4>
+          <h3>{title}</h3>
           <span>{description}</span>
         </div>
         <div className={ItemStyle.price_available}>
-          <h4>{price}</h4>
-          <span>{available ? "Disponible" : "Indisponible"}</span>
+          <span>
+            {price} {available ? "Disponible" : "Indisponible"}
+          </span>
         </div>
       </div>
     </div>
