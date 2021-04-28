@@ -95,3 +95,10 @@
     opacity: 1;
   }
 }
+
+@-webkit-keyframes slide-top {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

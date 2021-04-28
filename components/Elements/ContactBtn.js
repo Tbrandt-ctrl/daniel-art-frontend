@@ -8,7 +8,7 @@ const ContactBtn = () => {
       </a>
       <h4>
         Website designed by{" "}
-        <a href="https://kolocagency.com/" targer="_blank">
+        <a href="https://kolocagency.com/" target="_blank">
           Koloc Agency
         </a>
       </h4>

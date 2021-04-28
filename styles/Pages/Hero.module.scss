@@ -34,7 +34,20 @@
   }
 }
 
+@-webkit-keyframes slide-top {
+  to {
+    height: 20vh;
+  }
+}
+
 @keyframes disappear {
+  to {
+    position: absolute;
+    background-color: transparent;
+  }
+}
+
+@-webkit-keyframes disappear {
   to {
     position: absolute;
     background-color: transparent;
