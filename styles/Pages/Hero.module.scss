@@ -2,39 +2,41 @@
 @import "../Variables.scss";
 
 .container {
+  position: fixed;
+  background-color: white;
   top: 0;
-  height: 100vh;
   z-index: 5;
+
+  height: 100vh;
   width: inherit;
-  position: absolute;
+
   display: flex;
   justify-content: center;
+
+  animation: disappear 1s ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+
   > div {
-    height: 20vh;
+    height: 100vh;
     @include FlexCenterCenter;
-    transform: translateY(45vh);
     animation: slide-top 1s ease;
     animation-iteration-count: 1;
     animation-fill-mode: both;
     animation-delay: 2s;
-    h1 {
-      overflow: hidden;
-      text-align: center;
-      font-weight: 700;
-      line-height: 2.3rem;
-    }
-  }
-  @media only screen and (min-width: 440px) {
-    > div {
-      height: 20vh;
-      transform: translateY(35vh);
-      @include FlexCenterCenter;
-    }
   }
 }
 
 @keyframes slide-top {
   to {
-    transform: translateY(0);
+    height: 20vh;
+  }
+}
+
+@keyframes disappear {
+  to {
+    position: absolute;
+    background-color: transparent;
   }
 }

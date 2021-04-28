@@ -6,7 +6,12 @@ const ContactBtn = () => {
       <a href="https://www.instagram.com/danielbrndt/" target="_blank">
         <span>contact me</span>
       </a>
-      <h4>Website designed by Koloc Agency</h4>
+      <h4>
+        Website designed by{" "}
+        <a href="https://kolocagency.com/" targer="_blank">
+          Koloc Agency
+        </a>
+      </h4>
     </div>
   );
 };

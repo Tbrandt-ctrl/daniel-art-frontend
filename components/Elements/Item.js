@@ -1,29 +1,14 @@
 import ItemStyle from "../../styles/Elements/Item.module.scss";
 
-import { useState, useEffect } from "react";
-
 import Image from "next/image";
 
-const Item = ({ img, title, description, price, available, go }) => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    go === true ? setVisible(true) : null;
-  }, [go]);
-
+const Item = ({ img, title, description, price, available }) => {
   return (
-    <div
-      className={`${ItemStyle.container} ${visible ? ItemStyle.visible : ""}`}
-    >
-      <div className={ItemStyle.img}>
-        <Image
-          preload="true"
-          loading="eager"
-          src={img}
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+    <div className={`${ItemStyle.container} `}>
+      <div
+        className={ItemStyle.img}
+        style={{ backgroundImage: `url(${img})` }}
+      ></div>
       <div className={ItemStyle.info}>
         <div className={ItemStyle.title_description}>
           <h3>{title}</h3>

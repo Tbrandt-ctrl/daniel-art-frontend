@@ -1,6 +1,7 @@
 @import "./Variables.scss";
 @import "./Functions.scss";
 @import url("https://use.typekit.net/hkg1whj.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   margin: 0;
@@ -8,10 +9,20 @@
   box-sizing: border-box;
   overflow: hidden;
   overflow-y: auto;
+}
+h1,
+h2,
+h3,
+h4 {
   font-family: "bicyclette", sans-serif;
+  color: $dark_turq;
+}
+span,
+a {
+  color: $dark_brown;
+  font-family: "poppins", sans-serif;
 }
 
 html {
-  @include fluid-type($min_width, $max_width, $min_font, $max_font);
-  color: $main_black;
+  font-size: min(max(1rem, 4vw), 16px) !important;
 }

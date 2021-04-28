@@ -3,27 +3,34 @@
 
 .container {
   height: auto;
-  width: 80vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  > div {
-    width: inherit;
-  }
   margin-bottom: 15vh;
-  @media only screen and (min-width: 1100px) {
-    width: 20vw;
-    &:nth-of-type(odd) {
-      margin-right: 5vw;
-    }
-    &:nth-of-type(even) {
-      margin-left: 5vw;
+
+  //mobile
+  width: 80vw;
+  > div {
+    width: 70vw;
+  }
+
+  @media only screen and (min-width: 1024px) and (orientation: landscape) {
+    //desktop
+    width: 30vw;
+    > div {
+      width: 25vw;
     }
   }
 }
 
 .img {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  //animation
   transform: translateY(10%);
   opacity: 0;
   animation: slide-top 2s ease;
@@ -31,52 +38,28 @@
   animation-fill-mode: both;
   animation-delay: 3s;
 
-  position: relative;
+  //mobile
   height: 50vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  @media only screen and (min-width: 1100px) {
-    height: 55vh;
+
+  @media only screen and (min-width: 440px) {
+    //desktop
+    height: 30vw;
+    @media only screen and (max-width: 1024px) and(orientation: portrait) {
+      //tablet
+      height: 60vh;
+    }
   }
 }
 
 .info {
-  margin-top: 4vh;
-  height: auto;
+  margin-top: 3vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 
   > div {
-    min-height: inherit;
-  }
-  span {
-    font-weight: 200;
-    margin-top: 0.2rem;
-    font-style: normal;
-    font-size: 80%;
-  }
-
-  .title_description {
-    width: auto;
     display: flex;
-    flex-direction: column;
-    text-align: start;
-    h3 {
-      font-weight: bold;
-      color: #022222;
-    }
-  }
-
-  .price_available {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .title_description,
-  .price_available {
     * {
       transform: translateY(20%);
       opacity: 0;
@@ -85,6 +68,24 @@
       animation-fill-mode: both;
       animation-delay: 4s;
     }
+  }
+
+  span {
+    font-weight: 200;
+    margin-top: 0.2rem;
+    font-size: 80%;
+  }
+
+  .title_description {
+    flex-direction: column;
+    text-align: start;
+    h3 {
+      font-weight: bold;
+    }
+  }
+
+  .price_available {
+    flex-direction: row;
   }
 }
 

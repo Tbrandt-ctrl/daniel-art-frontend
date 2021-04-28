@@ -7,7 +7,7 @@
   flex-direction: column;
   margin-bottom: 15vh;
   @include FlexCenterCenter;
-  color: black;
+  color: $dark_turq;
 
   h4:first-of-type {
     font-weight: 800;
@@ -20,12 +20,13 @@
     font-weight: 300;
     background: #dbdbdb;
     padding: 0.75rem 2.5rem;
-    color: black;
+    color: $dark_turq;
     text-decoration: none;
-    z-index: 1;
+    z-index: 4;
     > span {
       transition: transform 0.3s ease;
       display: inline;
+      z-index: 5;
     }
     &::before {
       z-index: -1;
@@ -37,7 +38,7 @@
       width: 100%;
       height: 100%;
       border-radius: 0 10% 10% 0;
-      background-color: black;
+      background-color: $dark_brown;
       display: block;
       position: absolute;
       transition: transform 0.3s ease;
@@ -48,7 +49,9 @@
       }
     }
     &:focus {
-      color: white;
+      > span {
+        color: white;
+      }
       &::before {
         transform: scaleX(1);
         border-radius: 0;
@@ -59,6 +62,8 @@
   h4:last-of-type {
     margin-top: 10vh;
     font-weight: 500;
-    font-size: 0.8rem;
+    a {
+      font: inherit;
+    }
   }
 }

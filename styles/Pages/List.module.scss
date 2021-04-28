@@ -6,33 +6,23 @@
   * {
     overflow: hidden;
   }
-  //mobile
   height: auto;
   width: 80vw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  //mobile
   flex-direction: column;
   padding-top: 20vh;
-  @media only screen and (min-width: 440px) {
+  @media only screen and (min-width: 1024px) {
     //desktop
-    padding: 20vh 10vw 0 10vw;
     flex-wrap: wrap;
     flex-direction: row;
-
-    @media only screen and (max-width: 1100px) {
-      //tablet
-      padding: 25vh 0 0 0;
-      flex-wrap: nowrap;
-      flex-direction: column;
-      > div {
-        width: 80vw;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        > div:first-of-type {
-          height: 80vh;
-        }
-      }
-    }
+  }
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    //tablet
+    flex-wrap: nowrap;
+    flex-direction: column;
   }
 }
