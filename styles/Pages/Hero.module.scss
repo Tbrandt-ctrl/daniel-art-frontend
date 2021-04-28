@@ -2,8 +2,7 @@
 @import "../Variables.scss";
 
 .container {
-  position: fixed;
-  background-color: white;
+  position: absolute;
   top: 0;
   z-index: 5;
 
@@ -13,18 +12,13 @@
   display: flex;
   justify-content: center;
 
-  animation: disappear 1s ease;
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-  animation-delay: 2s;
-
   > div {
     height: 100vh;
     @include FlexCenterCenter;
     animation: slide-top 1s ease;
     animation-iteration-count: 1;
     animation-fill-mode: both;
-    animation-delay: 2s;
+    animation-delay: 1s;
   }
 }
 
@@ -40,16 +34,8 @@
   }
 }
 
-@keyframes disappear {
+@-moz-keyframes slide-top {
   to {
-    position: absolute;
-    background-color: transparent;
-  }
-}
-
-@-webkit-keyframes disappear {
-  to {
-    position: absolute;
-    background-color: transparent;
+    height: 20vh;
   }
 }

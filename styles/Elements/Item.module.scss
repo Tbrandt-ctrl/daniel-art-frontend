@@ -36,7 +36,7 @@
   animation: slide-top 2s ease;
   animation-iteration-count: 1;
   animation-fill-mode: both;
-  animation-delay: 3s;
+  animation-delay: 2s;
 
   //mobile
   height: 50vh;
@@ -66,7 +66,7 @@
       animation: slide-top 2s ease;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay: 4s;
+      animation-delay: 3s;
     }
   }
 
@@ -97,6 +97,13 @@
 }
 
 @-webkit-keyframes slide-top {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes slide-top {
   to {
     transform: translateY(0);
     opacity: 1;
